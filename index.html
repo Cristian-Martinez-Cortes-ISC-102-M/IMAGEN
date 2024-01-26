@@ -6,5 +6,28 @@
   <title>Selector de Imagen</title>
 </head>
 <body>
+  <input type="file" id="fileInput">
+  <button onclick="guardarImagen()">Guardar Imagen</button>
+  <img id="imagenGuardada" src="" alt="Imagen Guardada">
+  
+  <script>
+    function guardarImagen() {
+      const selectedFile = document.getElementById('fileInput').files[0];
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const imageUrl = event.target.result;
+        document.getElementById('imagenGuardada').src = imageUrl;
+        localStorage.setItem('imagenGuardada', imageUrl);
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+
+    window.onload = function() {
+      const imagenGuardada = localStorage.getItem('imagenGuardada');
+      if (imagenGuardada) {
+        document.getElementById('imagenGuardada').src = imagenGuardada;
+      }
+    };
+  </script>
 </body>
 </html>
