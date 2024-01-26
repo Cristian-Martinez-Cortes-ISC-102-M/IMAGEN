@@ -53,7 +53,7 @@
 
 <body>
 
-    <label for="file" class="custum-file-upload">
+    <label for="fileInput" class="custum-file-upload">
         <div class="icon">
             <svg viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
                 <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
@@ -70,12 +70,12 @@
         </div>
         <input id="fileInput" type="file">
     </label>
+        
 
 
 
-    <input type="file" id="fileInput">
-    <button onclick="guardarImagen()">Guardar Imagen</button>
-    <img id="imagenGuardada" src="" alt="Imagen Guardada">
+    <button onclick="guardarImagen()">Guardar Imagen</button><br>
+    <img id="imagenGuardada" src="" alt="Imagen Guardada" width="600">
 
     <script>
         function guardarImagen() {
